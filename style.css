@@ -55,7 +55,7 @@ ul
     list-style-type: none;
     padding:0;
 }
-li
+nav li
 {
     background-color: rgb(167, 161, 161);
     border-radius: 4px;
@@ -63,7 +63,7 @@ li
     display: flex;
     margin:1.1em;
 }
-li > a /*lien de navigation */
+nav li > a /*lien de navigation */
 {
     color:rgb(0, 0, 0);
     font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', sans-serif;
@@ -75,11 +75,11 @@ li > a /*lien de navigation */
     min-height:20px;    /* important : la page ne bouge plus quand on clique */
 }
 
-li > a:active /*(quand on clique )*/
+nav li > a:active /*(quand on clique )*/
 {
     font-size: 1.0em;
 }
-li > a:hover /* quand on passe la souris dessus */
+nav li > a:hover /* quand on passe la souris dessus */
 {
     font-weight: bold ;
     background-color:rgb(144, 144, 144) ;
@@ -122,7 +122,7 @@ aside:hover
     flex-direction: column;
     font-family: Papyrus, sans-serif;
     font-size: large;
-    max-width: 1200px;
+    max-width: 1216px;
     min-height: 414px;
     margin: auto;
     margin-top:20px;
@@ -138,7 +138,8 @@ aside:hover
 {
     /*min-height: 30px;*/
     padding-bottom:5px;
-    border-bottom: rgba(1, 148, 148, 0.6) solid;
+    border-bottom: rgba(178, 34, 34, 0.61) solid;   /*rgba(1, 148, 148, 0.6) turquoise*/
+    box-shadow: 0px 7px 0px -5px rgba(205, 134, 63, 0.61);
 }
 
 /* PENDU - fait parti de #page */
@@ -148,6 +149,7 @@ aside:hover
     /*align-items: center;*/
     border-radius:5px;
     width: 190px;
+    margin-top: 1.5em;
 }
 #img_pendu:hover
 {
@@ -168,13 +170,66 @@ aside:hover
     margin:auto;
 }
 
-/* REGLES - fait parti de #page */
+/*REGLES - fait parti de #page*/
 .container_text
 {
-    padding:3em;
+    padding:1em;
     margin: auto;
-    font-family: cursive;
+    /*font-family: cursive;*/
     text-align: justify;
+}
+
+/*new : règles */
+
+#regle_body
+{
+    text-align: left;
+}
+
+.container_text h2
+{
+    text-align: center;
+    font-size: 25px;
+}
+
+.liste_nav
+{
+    background-color: rgb(167, 161, 161);
+    border-radius: 4px;
+
+    font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+    font-size: 17.5px;
+    text-align: center;
+    min-width: 200px;
+    padding:4px;
+    min-height:20px;
+}
+
+.centre
+{
+    text-align: center;
+}
+
+.barre
+{
+    text-decoration: line-through;
+}
+
+.container_text strong
+{
+    color:red;
+}
+
+.container_text .larousse
+{
+    color:rgb(148, 136, 26);
+}
+
+.lien_pendu
+{
+    text-decoration: none;
+    color: rgb(50, 50, 50);
 }
 
 /* PIED DE PAGE */
@@ -188,7 +243,7 @@ footer
     border-radius: 4px;
     box-shadow: 3px 3px 10px black;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 20px; margin-bottom: 7px;
     text-align: center;
 }
 
