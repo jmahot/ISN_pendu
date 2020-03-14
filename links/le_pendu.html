@@ -26,7 +26,7 @@
             <h1>Le Jeu du Pendu</h1>
             
             <div id="tout">
-                <aside id="clavier_imgPendu">
+                <aside id="container_fondblanc">
 
                     <div id="pendu_container_img">
                         <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/></p>
@@ -68,19 +68,20 @@
                         </tr>
                     </table>
                 </aside>
-                <p id="message_defaite" class="bold">Le mot à découvrir était :</p>
-                <table id="cachette">
-                    <tr>
-                        <script src="cachette.js"></script>
-                    </tr>
-                </table>
-                    
-                <script src="tableauMot.js"></script>
+                <div id="tableauCachette_recommencer">
+                    <p id="message_defaite" class="bold">Le mot à découvrir était :</p>
+                    <table id="cachette">
+                        <tr>
+                            <script src="cachette.js"></script>
+                        </tr>
+                    </table>
+                        
+                    <script src="tableauMot.js"></script>
 
-                <p class="bold" id="recommencer"><a class="recharger" href="javascript:window.location.reload();">
-                    <img id="icon_redo" src="../images/redo.png" alt="Vous voulez recommencer ?"/>
-                </a></p>
-
+                    <p class="bold" id="recommencer"><a class="recharger" href="javascript:window.location.reload();">
+                        <img id="icon_redo" src="../images/redo.png" alt="Vous voulez recommencer ?"/>
+                    </a></p>
+                </div>
             </div>
 
         </section>
