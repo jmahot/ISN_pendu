@@ -1,13 +1,13 @@
 var motSecret;
         
-var now=new Date();			// Date d'aujourd'hui
-var tableauMot=new Array();	// Le tableau qui contient les lettres du mot à trouver
+var time=new Date();			// Date d'aujourd'hui
+var tableauCachette=new Array();	// Le tableau qui contient les lettres du mot à trouver
 var mots=new Array();		// Le tableau qui contient tous les mots possibles
         
 var tailleMot;				// Le nombre de lettres du mot à trouver
 var coupsManques=0;			// Le nombre de lettres fausses essayées
-var lettresTrouvees=0;		// Le nombre de lettres trouvées
-var fini=false;				// true si le jeu est terminé
+var lettresDecouvertes=0;		// Le nombre de lettres trouvées
+var end=false;				// true si le jeu est terminé
         
 mots[0]="TITANESQUE";
 mots[1]="ANABELLE";
@@ -24,7 +24,7 @@ mots[11]="IGLOO";
 mots[12]="NAVIRE";
         
 // On prend un mot au hasard en fonction de la seconde en cours
-motSecret=mots[now.getSeconds() % mots.length];
+motSecret=mots[time.getSeconds() % mots.length];
 tailleMot=motSecret.length;
         
 // Permet de changer la couleur des touches du clavier
@@ -36,7 +36,7 @@ function changeCouleur(element,couleur){
 function gameplay(element){
             
     // Si la couleur de fond est orange, c'est qu'on a déjà essayé - on quitte la fonction
-    if(element.style.color=="rgba(255, 165, 0, 1)" || fini){
+    if(element.style.color=="rgba(255, 165, 0, 1)" || end){
         return;
     }    
     // On récupère la lettre du clavier et on met la touche en orange (pour signaler qu'elle est cliquée)
@@ -50,10 +50,10 @@ function gameplay(element){
     for(var i=0; i<tailleMot; i++) {
             
         // Si c'est le cas :
-       if(tableauMot[i].innerHTML==lettre) {
-            tableauMot[i].style.visibility='visible';	// On affiche la lettre
+       if(tableauCachette[i].innerHTML==lettre) {
+            tableauCachette[i].style.visibility='visible';	// On affiche la lettre
             trouve=true;
-            lettresTrouvees++;
+            lettresDecouvertes++;
         }
     }
     
@@ -64,14 +64,14 @@ function gameplay(element){
         
         // Si on a raté 10 fois :
         if(coupsManques==10){
-            for(var i=0; i<tailleMot; i++) tableauMot[i].style.visibility='visible';
+            for(var i=0; i<tailleMot; i++) tableauCachette[i].style.visibility='visible';
             alert("Vous avez perdu !");
-            fini=true;
+            end=true;
             // on affiche le mot, on fini le jeu
         }
     }
-    if(lettresTrouvees==tailleMot){
+    if(lettresDecouvertes==tailleMot){
         alert("Bravo ! Vous avez découvert le mot secret !");
-        fini=true;
+        end=true;
     }
 }

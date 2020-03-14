@@ -1,1 +1,1 @@
-for(var i=0; i<tailleMot; i++) tableauMot[i]=document.getElementById(i);
+for(var i=0; i<tailleMot; i++) tableauCachette[i]=document.getElementById(i);
