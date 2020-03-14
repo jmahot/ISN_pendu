@@ -5,9 +5,10 @@ var tableauMot=new Array();	// Le tableau qui contient les lettres du mot à tro
 var mots=new Array();		// Le tableau qui contient tous les mots possibles
         
 var tailleMot;				// Le nombre de lettres du mot à trouver
-var coupsManques=0;			// Le nombre de lettres fausses essay�es
+var coupsManques=0;			// Le nombre de lettres fausses essayées
 var lettresTrouvees=0;		// Le nombre de lettres trouvées
 var fini=false;				// true si le jeu est terminé
+var coupsRestants=10;
         
 mots[0]="TITANESQUE";
 mots[1]="ANABELLE";
@@ -60,18 +61,19 @@ function gameplay(element){
     // Si la lettre n'est pas présente, trouve vaut toujours false :
     if(!trouve){
         coupsManques++;
+        coupsRestants--;
         document.images['pendu'].src="../images/penduC/pendu_"+coupsManques+".png"; // On change l'image du pendu
         
         // Si on a raté 10 fois :
         if(coupsManques==10){
             for(var i=0; i<tailleMot; i++) tableauMot[i].style.visibility='visible';
-            alert("Vous avez perdu !");
+            //alert("Vous avez perdu !");
             fini=true;
             // on affiche le mot, on fini le jeu
         }
     }
     if(lettresTrouvees==tailleMot){
-        alert("Bravo ! Vous avez découvert le mot secret !");
+        //alert("Bravo ! Vous avez découvert le mot secret !");
         fini=true;
     }
 }
