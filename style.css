@@ -414,10 +414,10 @@ audio
 {
     display: none;
     padding-left:2em;
-    padding-right: 1em;
+    padding-right: 2em;
     padding-top:5em;
     height:165px;
-    width:200px;
+    width:184px;
     vertical-align: middle;
     background-image: url("images/postit.png");
     background-size: cover;
@@ -427,6 +427,7 @@ audio
     right:200px;
     font-family: cursive;
     font-size: small;
+    word-wrap: break-word;
 }
 .label
 {
@@ -476,5 +477,14 @@ audio
     #credit_auteur
     {
         right:100px;
+    }
+    nav
+    {
+        margin-top: 1em;
+
+    }
+    aside[id="header"]
+    {
+        margin-top:1em;
     }
 }
