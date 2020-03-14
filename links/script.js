@@ -2,17 +2,18 @@ var motSecret;
         
 var time=new Date();			// Date d'aujourd'hui
 var tableauCachette=new Array();	// Le tableau qui contient les lettres du mot à trouver
-var mots=new Array();		// Le tableau qui contient tous les mots possibles
+/*var mots=new Array();*/		// Le tableau qui contient tous les mots possibles
         
 var tailleMot;				// Le nombre de lettres du mot à trouver
 var coupsManques=0;			// Le nombre de lettres fausses essayées
 var lettresDecouvertes=0;		// Le nombre de lettres trouvées
 var end=false;				// true si le jeu est terminé
-        
-mots=["TITANESQUE","ANABELLE","POMPIER","OBELISQUE","PLACARD","RADIATEUR","DEODORANT","CAMION","HORLOGE","MARGUERITE","ELEPHANT","IGLOO","NAVIRE"];
-
+ 
 // On prend un mot au hasard en fonction de la seconde en cours
-motSecret=mots[time.getSeconds() % mots.length];
+
+/*motSecret=mots[time.getSeconds() % mots.length];*/
+motSecret=mots[Math.floor(Math.random()*mots.length)] 
+//l'autre méthode hasard trop restreint, toujours la même 1ere lettre
 tailleMot=motSecret.length;
 
 // Permet de changer la couleur des touches du clavier
