@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../style.css" />
         <title>Le Pendu</title>
+        <!--script src="mots.js"></script-->
         <script src="script.js"></script>
     </head>
 
@@ -26,43 +27,46 @@
             
             <div id="tout">
                 <aside id="clavier_imgPendu">
-                    
-                    <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/></p>
+
+                    <div id="pendu_container_img">
+                        <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/></p>
+                        <p><img name="victoire_defaite" class="pendu victoire_defaite" src="../images/penduC/pendu_0.png"/></p>
+                    </div>
 
                     <table id="alphabet">
                         <tr>
-                            <td onclick="gameplay(this);" >A</td>
-                            <td onclick="gameplay(this);" >B</td>
-                            <td onclick="gameplay(this);" >C</td>
-                            <td onclick="gameplay(this);" >D</td>
-                            <td onclick="gameplay(this);" >E</td>
-                            <td onclick="gameplay(this);" >F</td>
-                            <td onclick="gameplay(this);" >G</td>
-                            <td onclick="gameplay(this);" >H</td>
-                            <td onclick="gameplay(this);" >I</td>
-                            <td onclick="gameplay(this);" >J</td>
-                            <td onclick="gameplay(this);" >K</td>
-                            <td onclick="gameplay(this);" >L</td>
-                            <td onclick="gameplay(this);" >M</td>
+                            <td onclick="gameplay(this);" class="clavier">A</td>
+                            <td onclick="gameplay(this);" class="clavier">B</td>
+                            <td onclick="gameplay(this);" class="clavier">C</td>
+                            <td onclick="gameplay(this);" class="clavier">D</td>
+                            <td onclick="gameplay(this);" class="clavier">E</td>
+                            <td onclick="gameplay(this);" class="clavier">F</td>
+                            <td onclick="gameplay(this);" class="clavier">G</td>
+                            <td onclick="gameplay(this);" class="clavier">H</td>
+                            <td onclick="gameplay(this);" class="clavier">I</td>
+                            <td onclick="gameplay(this);" class="clavier">J</td>
+                            <td onclick="gameplay(this);" class="clavier">K</td>
+                            <td onclick="gameplay(this);" class="clavier">L</td>
+                            <td onclick="gameplay(this);" class="clavier">M</td>
                         </tr>
                         <tr>
-                            <td onclick="gameplay(this);" >N</td>
-                            <td onclick="gameplay(this);" >O</td>
-                            <td onclick="gameplay(this);" >P</td>
-                            <td onclick="gameplay(this);" >Q</td>
-                            <td onclick="gameplay(this);" >R</td>
-                            <td onclick="gameplay(this);" >S</td>
-                            <td onclick="gameplay(this);" >T</td>
-                            <td onclick="gameplay(this);" >U</td>
-                            <td onclick="gameplay(this);" >V</td>
-                            <td onclick="gameplay(this);" >W</td>
-                            <td onclick="gameplay(this);" >X</td>
-                            <td onclick="gameplay(this);" >Y</td>
-                            <td onclick="gameplay(this);" >Z</td>
+                            <td onclick="gameplay(this);" class="clavier">N</td>
+                            <td onclick="gameplay(this);" class="clavier">O</td>
+                            <td onclick="gameplay(this);" class="clavier">P</td>
+                            <td onclick="gameplay(this);" class="clavier">Q</td>
+                            <td onclick="gameplay(this);" class="clavier">R</td>
+                            <td onclick="gameplay(this);" class="clavier">S</td>
+                            <td onclick="gameplay(this);" class="clavier">T</td>
+                            <td onclick="gameplay(this);" class="clavier">U</td>
+                            <td onclick="gameplay(this);" class="clavier">V</td>
+                            <td onclick="gameplay(this);" class="clavier">W</td>
+                            <td onclick="gameplay(this);" class="clavier">X</td>
+                            <td onclick="gameplay(this);" class="clavier">Y</td>
+                            <td onclick="gameplay(this);" class="clavier">Z</td>
                         </tr>
                     </table>
                 </aside>
-                
+                <p id="message_defaite" class="bold">Le mot à découvrir était :</p>
                 <table id="cachette">
                     <tr>
                         <script src="cachette.js"></script>

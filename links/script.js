@@ -14,7 +14,7 @@ mots=["TITANESQUE","ANABELLE","POMPIER","OBELISQUE","PLACARD","RADIATEUR","DEODO
 // On prend un mot au hasard en fonction de la seconde en cours
 motSecret=mots[time.getSeconds() % mots.length];
 tailleMot=motSecret.length;
-        
+
 // Permet de changer la couleur des touches du clavier
 function changeCouleur(element,couleur){
     element.style.color=couleur;
@@ -51,17 +51,20 @@ function gameplay(element){
         document.images['pendu'].src="../images/penduC/pendu_"+coupsManques+".png"; // On change l'image du pendu
         
         // Si on a raté 10 fois :
-        if(coupsManques>10){
+        if(coupsManques>9){
             for(var i=0; i<tailleMot; i++) tableauCachette[i].style.visibility='visible';
             //alert("Vous avez perdu !");
-            document.images['pendu'].src="../images/penduC/pendu_10.png";
+            document.images['victoire_defaite'].src="../images/penduC/pendu_12.png";
+            var motdecouvrir_msg = document.getElementById('message_defaite');
+            motdecouvrir_msg.style.display="block";
+            
             end=true;
             // on affiche le mot, on fini le jeu
         }
     }
     if(lettresDecouvertes==tailleMot){
         //alert("Bravo ! Vous avez découvert le mot secret !");
-        document.images['pendu'].src="../images/penduC/pendu_11.png";
+        document.images['victoire_defaite'].src="../images/penduC/pendu_11.png";
         end=true;
     }
 }
