@@ -50,14 +50,14 @@ function gameplay(element){
     if(!trouve){
         coupsManques++;
         document.images['pendu'].src="../images/penduC/pendu_"+coupsManques+".png"; // On change l'image du pendu
-        document.images['compteur'].src="../images/count/count_"+coupsManques+".png";
+        document.images['compteur'].src="../images/count/count_"+coupsManques+".png"; // On change l'image du compteur à rebours
 
         // Si on a raté 10 fois :
         if(coupsManques>9){
             for(var i=0; i<tailleMot; i++) tableauCachette[i].style.visibility='visible';
-            document.images['compteur'].src="../images/count/count_12.png";
             document.images['compteur'].style.width="250px";
             document.images['compteur'].style.height="250px";
+            document.images['compteur'].src="../images/count/count_12.png";
             var motdecouvrir_msg = document.getElementById('message_defaite');
             motdecouvrir_msg.style.display="block";
             end=true;
@@ -66,9 +66,9 @@ function gameplay(element){
         }
     }
     if(lettresDecouvertes==tailleMot){
-        document.images['compteur'].src="../images/count/count_11.png";
         document.images['compteur'].style.width="250px";
         document.images['compteur'].style.height="250px";
+        document.images['compteur'].src="../images/count/count_11.png";
         end=true;
         // Victoire
     }
