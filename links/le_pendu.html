@@ -4,12 +4,81 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../style.css" />
         <title>Le Pendu</title>
+        <!-- TEST ( à enlever )
+        <script language="javascript" src="mots.js"*/>
+            /* ex de tableau : var monTableau=["lolal","louloukjhg"];*/
+            var n = Math.floor(Math.random() * (monTableau.length-1));
+            var motPendu=monTableau[n];
+        </script>
+        <script language="javascript">
+        -->
+        <script language="javascript" >
+            
+            var monTableau=["arbre","bouteille","chocolat"]
+            /* ex de tableau : var monTableau=["lolal","louloukjhg"];*/
+            var n = Math.floor(Math.random() * (monTableau.length)); /*s'il y a -1, le mot chocolat ne sera pas pris ! >_< */
+            var motPendu=monTableau[n];
+            var tailleMot=motPendu.length;  
+
+            var cachetteVide = new Array();
+            var lettresTrouves = 0;
+            var coupsRestants = 10;
+
+            function newCouleur(element,couleur){
+                
+                element.style.color=couleur;
+            }
+
+
+            function gameplay(element){
+                
+                if(element.style.color == 'rgba(255, 165, 0, 1)'){
+                    return;
+                }
+
+                /*ici on récupère la lettre cliquée*/
+                /* prend syntaxe html = comparer après avec lettres du mot*/
+                var lettre=element.innerHTML;
+                newCouleur(element,'rgba(255, 165, 0, 1)');
+                
+
+                for( let i = 0; i<tailleMot; i++){
+
+                    if(motPendu[i].innerHTML == lettre){
+
+                        lettresTrouves++;
+                        /*montrer la lettre dans le tableau*/
+
+                    }
+                    
+                    else{
+                        coupsRestants--;
+                    /*afficher nouvelle image du pendu ?
+                    continuer le dessin*/
+
+                        if(coupsRestants == 0){
+                            /*document.write*/alert("OUPS ! VOUS AVEZ PERDU !");
+                            /*repasser tableau en mode visible*/
+                            return;
+                        }
+
+                    }
+
+                    if(lettresTrouves == tailleMot){
+
+                        /*document.write*/alert("VICTOIRE");
+                        return;
+                    }
+                }   
+            }
+
+        </script>
     </head>
 
     <body>
         <header>
-            <a href="../projet.html"><h1>Hortografe</h1></a>
-            <aside>
+            <a href="../projet.html"><h1 class="barre">Hortografe</h1></a>
+            <aside id="header">
                 <a href="rules.html">Les règles du jeu</a>
             </aside>
             <nav>
@@ -23,60 +92,87 @@
         <section id="page">
             <h1>Le Jeu du Pendu</h1>
             
-            <aside id=jeu>
-                
+            <div id="tout">
+                <aside id="clavier">
 
-                <table>
-    
-                 <tr>
-                  <td onclick="gameplay(this);" > A </td>
-                  <td onclick="gameplay(this);" > B </td>
-                  <td onclick="gameplay(this);" > C </td>
-                  <td onclick="gameplay(this);" > D </td>
-                  <td onclick="gameplay(this);" > E </td>
-                  <td onclick="gameplay(this);" > F </td>
-                  <td onclick="gameplay(this);" > G </td>
-                  <td onclick="gameplay(this);" > H </td>
-                  <td onclick="gameplay(this);" > I </td>
-                  <td onclick="gameplay(this);" >  J </td>
-                 </tr>
-                 <tr>
-                  <td onclick="gameplay(this);" > K </td>
-                  <td onclick="gameplay(this);" > L </td>
-                  <td onclick="gameplay(this);" > M </td>
-                  <td onclick="gameplay(this);" > N </td>
-                  <td onclick="gameplay(this);" > O </td>
-                  <td onclick="gameplay(this);" > P </td>
-                  <td onclick="gameplay(this);" > Q </td>
-                  <td onclick="gameplay(this);" > R</td>
-                  <td onclick="gameplay(this);" > S </td>
-                  <td onclick="gameplay(this);" > T </td>
-                 </tr>
-                 <tr>
-                  <td onclick="gameplay(this);" > U </td>
-                  <td onclick="gameplay(this);" > V </td>
-                  <td onclick="gameplay(this);" > W </td>
-                  <td onclick="gameplay(this);" > X </td>
-                  <td onclick="gameplay(this);" > Y </td>
-                  <td onclick="gameplay(this);" > Z </td>
-                 </tr>
-                
-                </table><br>
-    
-                <a class="recharger" href="javascript:window.location.reload();">
+                    <table id="alphabet">
+
+                        <tr>
+                            <td onclick="gameplay(this);" > A </td>
+                            <td onclick="gameplay(this);" > B </td>
+                            <td onclick="gameplay(this);" > C </td>
+                            <td onclick="gameplay(this);" > D </td>
+                            <td onclick="gameplay(this);" > E </td>
+                            <td onclick="gameplay(this);" > F </td>
+                            <td onclick="gameplay(this);" > G </td>
+                            <td onclick="gameplay(this);" > H </td>
+                            <td onclick="gameplay(this);" > I </td>
+                            <td onclick="gameplay(this);" > J </td>
+                            <td onclick="gameplay(this);" > K </td>
+                            <td onclick="gameplay(this);" > L </td>
+                            <td onclick="gameplay(this);" > M </td>
+                        </tr>
+                        <tr>
+                            <td onclick="gameplay(this);" > N </td>
+                            <td onclick="gameplay(this);" > O </td>
+                            <td onclick="gameplay(this);" > P </td>
+                            <td onclick="gameplay(this);" > Q </td>
+                            <td onclick="gameplay(this);" > R </td>
+                            <td onclick="gameplay(this);" > S </td>
+                            <td onclick="gameplay(this);" > T </td>
+                            <td onclick="gameplay(this);" > U </td>
+                            <td onclick="gameplay(this);" > V </td>
+                            <td onclick="gameplay(this);" > W </td>
+                            <td onclick="gameplay(this);" > X </td>
+                            <td onclick="gameplay(this);" > Y </td>
+                            <td onclick="gameplay(this);" > Z </td>
+                        </tr>
+                    
+                    </table><br>
+
+                </aside>
+                  
+                <table id="cachette">
+                    <tr>
+                        <!-- .charAt() récupère rang et renvoi chaine de caractère-->
+                        <script language="javascript">
+                            
+                            for(var i = 0; i<tailleMot; i++){
+                                document.write("<td><p>" + motPendu.charAt(i) + "</p></td>");
+                            }
+
+                        </script>
+                    </tr>
+                </table>
+                    
+                <script language="javascript">
+
+                    /*for(var i=0; i<tailleMot; i++){
+                    cachetteVide[i]=document.getElementById(cellule);
+                    }*/
+
+                </script>
+
+                <p class="bold"><a class="recharger" href="javascript:window.location.reload();">
                     Vous voulez recommencer ?
-                </a>
+                </a></p>
                 <!-- créer lien permettant d'acutaliser page = recharge
                 gameplay = fonction javascript qui gère le jeu
                 onclick = récupère lettre du tableau qui devient this => paramètre de gameplay-->
-    
-    
-                </aside>
-    
+            </div>
+
         </section>
 
-        <footer>
-            <p>Fait par Julie Mahot et Tinuviel Croissant</p>
-        </footer>
+        <div id="piedDePage">
+            <footer>
+                <p>Fait par Julie Mahot et Tinuviel Croissant</p>
+            </footer>
+
+            <div id="bloc_logo_larousse">
+                <a id="lien_larousse" href="https://www.larousse.fr/dictionnaires/francais" title="Site Larousse | Ctrl + clic : ouvrir dans un nouvel onglet">
+                    <p><img id="img_dico" src="../images/img_dico.png" alt="DicoLarousse"/></p>
+                </a>
+            </div>
+        </div>
     </body>
 </html>
