@@ -122,8 +122,8 @@ aside:hover
     flex-direction: column;
     font-family: Papyrus, sans-serif;
     font-size: large;
-    max-width: 1216px;
-    min-height: 414px;
+    max-width: 90%/*1216px*/;
+    min-height: 550px /*414px*/;
     margin: auto;
     margin-top:20px;
     background-color: rgb(218, 218, 218);
@@ -146,7 +146,7 @@ aside:hover
 #img_pendu
 {
     /*margin:auto;*/
-    /*align-items: center;*/
+    align-items: center;
     border-radius:5px;
     width: 190px;
     margin-top: 1.5em;
@@ -245,5 +245,36 @@ footer
     margin: auto;
     margin-top: 20px; margin-bottom: 7px;
     text-align: center;
+    height:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
+/* LIEN DICO LAROUSSE */
+
+#piedDePage
+{
+    display:flex;
+}
+#bloc_logo_larousse
+{
+    background-color:rgba(1, 148, 148, 0.6);
+    text-align: center;
+    border-radius: 100%;
+    width:5em;
+    height:5em;
+    margin:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}   
+
+#img_dico
+{
+    width:40px;
+    height:50px;
+    padding:1em;
+}
