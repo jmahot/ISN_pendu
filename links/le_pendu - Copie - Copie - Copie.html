@@ -26,9 +26,10 @@
             
             <div id="tout">
                 <aside id="clavier_imgPendu">
-
+                    
+                    <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/></p>
+                    
                     <table id="alphabet">
-
                         <tr>
                             <td onclick="gameplay(this);" >A</td>
                             <td onclick="gameplay(this);" >B</td>
@@ -59,9 +60,8 @@
                             <td onclick="gameplay(this);" >Y</td>
                             <td onclick="gameplay(this);" >Z</td>
                         </tr>
-                        <img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/>
                     </table>
-
+                    
                 </aside>
                   
                 <table id="cachette">
@@ -94,6 +94,26 @@
             </div>
 
             <audio src="../musics/Jaunter-Reset.mp3" controls loop>Votre navigateur ne semble pas supporter ce fichier.</audio>
+            
+            <p><img onclick="montrerCacher('credit_auteur');" id="icon_music" src="../images/icon_music.png" alt="Notes et Références : Crédit d'auteurs (Musique)" title="Cliquer 2 fois pour faire apparaître"/></p>
+            <p id="credit_auteur">
+                <span class="label">Auteur : </span><a class="lien_credits" href="https://jaunter.bandcamp.com">Jaunter</a><br/>
+                <span class="label">Track : </span>Reset<br/>
+                <span class="label">Licence : </span><a class="lien_credits" href="https://creativecommons.org/licenses/by/3.0/">https://creativecommons.org/licenses/by/3.0/</a><br/>
+                <span class="label">Source : </span><a class="lien_credits" href="https://auboutdufil.com/?id=497">Télécharger gratuitement Jaunter -  Reset</a>
+            </p>
+
+            <script language="Javascript" >
+                function montrerCacher(){
+                    var texte = document.getElementById('credit_auteur');
+                    if(texte.style.display == "none") {
+                        texte.style.display = "table-cell";
+                    }
+                    else {
+                        texte.style.display = "none";
+                    }
+                }
+            </script>
         </div>
     </body>
 </html>

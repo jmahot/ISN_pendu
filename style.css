@@ -18,6 +18,7 @@ body
     background-image: url(images/background.jpg);
     background-attachment: fixed;
     font-family: Harrington, Papyrus, "Lucida Handwriting", monospace, sans-serif;
+    position: relative;
 }
 
 /* HEADER */
@@ -182,6 +183,8 @@ aside[id="header"]:hover
     background:white;
     height:300px;
     font-weight: bold;
+    border-radius: 0px 0px 20px 20px;/**/
+    box-shadow: 0px 3px 2px grey;/**/
 }
 
 table
@@ -238,9 +241,10 @@ td
     height:50px;
 }
 
-/*#cachette p{
-    visibility:hidden;
-}*/
+#cachette p
+{
+    visibility: hidden;
+}
 
 
 .recharger
@@ -251,6 +255,17 @@ td
 }
 
 aside[id="clavier"]
+{
+    font-weight: bold;
+}
+
+.pendu
+{
+    width: 250px;
+    height:250px;
+}
+
+.bold
 {
     font-weight: bold;
 }
@@ -377,19 +392,78 @@ audio
     border: 3px solid grey;
 }
 
-/* AUTRES RAJOUTES RECEMMENT */
-.pendu
+#icon_music
 {
-    width: 250px;
-    height:250px;
+    height:60px;
+    width:60px;
+    cursor: pointer;
+    position: absolute;
+    bottom:0px;
+    right:110px;
 }
 
-#cachette p
+#icon_music:active
 {
-    visibility: hidden;
+    height:55px;
+    width:55px;
 }
 
-.bold
+#credit_auteur
+{
+    display: none;
+    padding-left:2em;
+    padding-right: 1em;
+    padding-top:5em;
+    height:165px;
+    width:200px;
+    vertical-align: middle;
+    background-image: url("images/postit.png");
+    background-size: cover;
+    font-size: 1em;
+    position: absolute;
+    bottom:0px;
+    right:200px;
+    font-family: cursive;
+    font-size: small;
+}
+.label
 {
     font-weight: bold;
+    color: orange;
+}
+.lien_credits
+{
+    text-decoration: none;
+    color:darkcyan;
+}
+
+/* MediaQueries */
+
+@media all and (max-width:1024px)
+{
+    #clavier_imgPendu
+    {
+        flex-direction: column;
+        height:450px;
+    }
+    table
+    {
+        bottom:-10px;
+    }
+    #page
+    {
+        min-height: 670px;
+    }
+    #cachette
+    {
+        margin-top:10px;
+    }
+    table
+    {
+        margin-bottom: 10px;
+    }
+    #recommencer
+    {
+        bottom:12px;
+    }
 }
