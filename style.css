@@ -76,7 +76,7 @@ nav li > a /*lien de navigation */
     min-height:20px;    /* important : la page ne bouge plus quand on clique */
 }
 
-nav li > a:active /*(quand on clique )*/
+nav li > a:active /* quand on clique */
 {
     font-size: 1.0em;
 }
@@ -138,20 +138,17 @@ aside[id="header"]:hover
 
 #page h1
 {
-    /*min-height: 30px;*/
     padding-bottom:5px;
-    border-bottom: rgba(178, 34, 34, 0.61) solid;   /*rgba(1, 148, 148, 0.6) turquoise*/
+    border-bottom: rgba(178, 34, 34, 0.61) solid;
     box-shadow: 0px 7px 0px -5px rgba(205, 134, 63, 0.61);
 }
 
 /* PENDU - fait parti de #page */
 #img_pendu
 {
-    /*margin:auto;*/
-    /*align-items: center;*/
     border-radius:5px;
     width: 190px;
-    margin-top: 7em/*1.5em*/;
+    margin-top: 7em;
 }
 #img_pendu:hover
 {
@@ -164,7 +161,6 @@ aside[id="header"]:hover
 #container_pendu
 {
     display: flex;
-    /*flex-direction: column;*/
     min-height:364px;
 }
 #container_pendu > a
@@ -177,14 +173,13 @@ aside[id="header"]:hover
 #clavier_imgPendu
 {
     display: flex;
-    /*flex-direction: column;*/
     justify-content: space-around;
     align-items: center;
     background:white;
     height:300px;
     font-weight: bold;
-    border-radius: 0px 0px 20px 20px;/**/
-    box-shadow: 0px 3px 2px grey;/**/
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 3px 2px grey;
 }
 
 table
@@ -205,14 +200,11 @@ td[class="clavier"] /* A REVOIR !!! */
     height:25px;
     text-align:center;
     cursor: pointer;
-    /*défini forme souris pour une action : ici les liens/boutons*/
 }
 
 #cachette
 {
     margin:auto;
-    /*clear:both; doit être utilisé seulement après un float il me semble*/ 
-    /*top:100px; top est seulement utile si tu mets 'position: ;'*/
 }
 
 #cachette td
@@ -271,9 +263,13 @@ aside[id="clavier"]
     height:120px;
 }
 
-.compteur_width
+#compteur_width
 {
-    width:250px;//modif
+    width:250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #pendu_container_img
 {
@@ -299,7 +295,6 @@ aside[id="clavier"]
 {
     padding:1em;
     margin: auto;
-    /*font-family: cursive;*/
     text-align: justify;
 }
 
@@ -367,17 +362,12 @@ footer
     border-radius: 4px;
     box-shadow: 3px 3px 10px black;
     margin: auto;
-    margin-top: 25px; margin-bottom: 7px;
-    /*text-align: center;*/
+    margin-top: 25px;
+    margin-bottom: 7px;
     height:1em;
     display: flex;
-    /*flex-direction: column;*/
     justify-content: space-around;
     align-items: center;
-    /*position: relative;
-    bottom:0px;
-    left:0;
-    right:0;*/
 }
 
 /* LIEN DICO LAROUSSE */
@@ -389,7 +379,7 @@ footer
     border-radius: 100%;
     width:4em;
     height:4em;
-    margin:0.5em;/**/
+    margin:0.5em;
     position:fixed;
     bottom:0px;
     left:0px;
@@ -398,7 +388,7 @@ footer
 #img_dico
 {
     width:30px;
-    height:35px;/**/
+    height:35px;
     padding:1em;
 }
 

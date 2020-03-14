@@ -1,9 +1,9 @@
 var motSecret;
         
-var time=new Date();			// Date d'aujourd'hui
+//var time=new Date();			// Date d'aujourd'hui
 var tableauCachette=new Array();	// Le tableau qui contient les lettres du mot à trouver
-/*var mots=new Array();*/		// Le tableau qui contient tous les mots possibles
-        
+//var mots=new Array();		// Le tableau qui contient tous les mots possibles
+
 var tailleMot;				// Le nombre de lettres du mot à trouver
 var coupsManques=0;			// Le nombre de lettres fausses essayées
 var lettresDecouvertes=0;		// Le nombre de lettres trouvées
@@ -55,21 +55,21 @@ function gameplay(element){
         // Si on a raté 10 fois :
         if(coupsManques>9){
             for(var i=0; i<tailleMot; i++) tableauCachette[i].style.visibility='visible';
-            //alert("Vous avez perdu !");
-            
             document.images['compteur'].src="../images/count/count_12.png";
-            document.images['compteur'].style.height="240px"; //modif
+            document.images['compteur'].style.width="250px";
+            document.images['compteur'].style.height="250px";
             var motdecouvrir_msg = document.getElementById('message_defaite');
             motdecouvrir_msg.style.display="block";
-            
             end=true;
             // on affiche le mot, on fini le jeu
+            // Défaite
         }
     }
     if(lettresDecouvertes==tailleMot){
-        //alert("Bravo ! Vous avez découvert le mot secret !");
         document.images['compteur'].src="../images/count/count_11.png";
-        document.images['compteur'].style.height="250px"; //modif
+        document.images['compteur'].style.width="250px";
+        document.images['compteur'].style.height="250px";
         end=true;
+        // Victoire
     }
 }

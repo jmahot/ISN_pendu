@@ -1,4 +1,3 @@
-
 function cleanMot(mot)
 {
 	mot = mot.toLowerCase();
@@ -8,7 +7,6 @@ function cleanMot(mot)
 	mot = mot.replace(/[îï]/g,"i");
 	mot = mot.replace(/[ôö]/g,"o");
 	mot = mot.replace(/[ç]/g,"c");
-	/*mot = mot.replace(/[0-9]/g,"");*/
 	return mot;
 }
 

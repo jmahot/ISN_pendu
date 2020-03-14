@@ -30,13 +30,11 @@
 
                     <div id="pendu_container_img">
                         <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/></p>
-                        <div id="compteur_width"> <!--Augmenter la width pour correspondre avec 250px-->
+                        <div id="compteur_width">
                             <p><img name="compteur" class="compteur" src="../images/count/count_0.png"/></p>
                         </div>
-                        <!--p><img name="victoire_defaite" class="pendu victoire_defaite" src="../images/penduC/pendu_0.png"/></p-->
                     </div>
-                    <!--div id="compteur_clavier"-->
-                        <!-- p><img name="compteur" class="compteur" src="../images/count/count_0.png"/></p -->
+
                     <table id="alphabet">
                         <tr>
                             <td onclick="gameplay(this);" class="clavier">A</td>
@@ -69,7 +67,6 @@
                             <td onclick="gameplay(this);" class="clavier">Z</td>
                         </tr>
                     </table>
-                    <!--/div-->
                 </aside>
                 <p id="message_defaite" class="bold">Le mot à découvrir était :</p>
                 <table id="cachette">
@@ -83,9 +80,7 @@
                 <p class="bold" id="recommencer"><a class="recharger" href="javascript:window.location.reload();">
                     <img id="icon_redo" src="../images/redo.png" alt="Vous voulez recommencer ?"/>
                 </a></p>
-                <!-- créer lien permettant d'acutaliser page = recharge
-                gameplay = fonction javascript qui gère le jeu
-                onclick = récupère lettre du tableau qui devient this => paramètre de gameplay-->
+
             </div>
 
         </section>
