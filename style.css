@@ -1,0 +1,26 @@
+body
+{
+    background-size: cover;
+    background-image: url(images/background.jpg);
+    background-attachment: fixed;
+}
+#page
+{
+    max-width: 1200px;
+    min-height: 500px;
+    margin:auto;
+    background-color: white;
+    box-shadow:6px 6px 6px black;
+    padding:2em;
+    margin-top:100px;
+}
+h1
+{
+    text-align:center;
+}
+img
+{
+    max-width: 30%;
+    margin:auto;
+    display:flex;
+}
