@@ -9,20 +9,8 @@ var coupsManques=0;			// Le nombre de lettres fausses essayées
 var lettresDecouvertes=0;		// Le nombre de lettres trouvées
 var end=false;				// true si le jeu est terminé
         
-mots[0]="TITANESQUE";
-mots[1]="ANABELLE";
-mots[2]="POMPIER";
-mots[3]="OBELISQUE";
-mots[4]="PLACARD";
-mots[5]="RADIATEUR";
-mots[6]="DEODORANT";
-mots[7]="CAMION";
-mots[8]="HORLOGE";
-mots[9]="MARGUERITE";
-mots[10]="ELEPHANT";
-mots[11]="IGLOO";
-mots[12]="NAVIRE";
-        
+mots=["TITANESQUE","ANABELLE","POMPIER","OBELISQUE","PLACARD","RADIATEUR","DEODORANT","CAMION","HORLOGE","MARGUERITE","ELEPHANT","IGLOO","NAVIRE"];
+
 // On prend un mot au hasard en fonction de la seconde en cours
 motSecret=mots[time.getSeconds() % mots.length];
 tailleMot=motSecret.length;
@@ -36,12 +24,12 @@ function changeCouleur(element,couleur){
 function gameplay(element){
             
     // Si la couleur de fond est orange, c'est qu'on a déjà essayé - on quitte la fonction
-    if(element.style.color=="rgba(255, 165, 0, 1)" || end){
+    if(element.style.color=="orange" || end){
         return;
     }    
     // On récupère la lettre du clavier et on met la touche en orange (pour signaler qu'elle est cliquée)
     var lettre=element.innerHTML;
-    changeCouleur(element,"rgba(255, 165, 0, 1)");
+    changeCouleur(element,"orange");
             
     // On met la variable trouve à false;
     var trouve=false;
@@ -63,15 +51,17 @@ function gameplay(element){
         document.images['pendu'].src="../images/penduC/pendu_"+coupsManques+".png"; // On change l'image du pendu
         
         // Si on a raté 10 fois :
-        if(coupsManques==10){
+        if(coupsManques>10){
             for(var i=0; i<tailleMot; i++) tableauCachette[i].style.visibility='visible';
-            alert("Vous avez perdu !");
+            //alert("Vous avez perdu !");
+            document.images['pendu'].src="../images/penduC/pendu_10.png";
             end=true;
             // on affiche le mot, on fini le jeu
         }
     }
     if(lettresDecouvertes==tailleMot){
-        alert("Bravo ! Vous avez découvert le mot secret !");
+        //alert("Bravo ! Vous avez découvert le mot secret !");
+        document.images['pendu'].src="../images/penduC/pendu_11.png";
         end=true;
     }
 }
