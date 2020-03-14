@@ -4,74 +4,8 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../style.css" />
         <title>Le Pendu</title>
-        <!-- TEST ( à enlever )
-        <script language="javascript" src="mots.js"*/>
-            /* ex de tableau : var monTableau=["lolal","louloukjhg"];*/
-            var n = Math.floor(Math.random() * (monTableau.length-1));
-            var motPendu=monTableau[n];
-        </script>
-        <script language="javascript">
-        -->
-        <script language="javascript" >
-            
-            var monTableau=["arbre","bouteille","chocolat"]
-            /* ex de tableau : var monTableau=["lolal","louloukjhg"];*/
-            var n = Math.floor(Math.random() * (monTableau.length)); /*s'il y a -1, le mot chocolat ne sera pas pris ! >_< */
-            var motPendu=monTableau[n];
-            var tailleMot=motPendu.length;  
-
-            var cachetteVide = new Array();
-            var lettresTrouves = 0;
-            var coupsRestants = 10;
-
-            function newCouleur(element,couleur){
-                
-                element.style.color=couleur;
-            }
-
-
-            function gameplay(element){
-                
-                if(element.style.color == 'rgba(255, 165, 0, 1)'){
-                    return;
-                }
-
-                /*ici on récupère la lettre cliquée*/
-                /* prend syntaxe html = comparer après avec lettres du mot*/
-                var lettre=element.innerHTML;
-                newCouleur(element,'rgba(255, 165, 0, 1)');
-                
-
-                for( let i = 0; i<tailleMot; i++){
-
-                    if(motPendu[i].innerHTML == lettre){
-
-                        lettresTrouves++;
-                        /*montrer la lettre dans le tableau*/
-                    }
-                    
-                    else{
-                        coupsRestants--;
-                        /*afficher nouvelle image du pendu ?
-                        continuer le dessin*/
-
-                        if(coupsRestants == 0){
-                            alert("OUPS ! VOUS AVEZ PERDU !");/*document.write*/
-                            /*repasser tableau en mode visible*/
-                            return;
-                        }
-
-                    }
-
-                    if(lettresTrouves == tailleMot){
-
-                        alert("VICTOIRE");/*document.write*/
-                        return;
-                    }
-                }   
-            }
-
-        </script>
+        <script src="mots.js"></script>
+        <script src="script.js"></script>
     </head>
 
     <body>
@@ -92,68 +26,62 @@
             <h1>Le Jeu du Pendu</h1>
             
             <div id="tout">
-                <aside id="clavier">
+                <aside id="clavier_imgPendu">
 
+                    <div id="pendu_container_img">
+                        <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/></p>
+                        <div id="compteur_width"> <!--Augmenter la width pour correspondre avec 250px-->
+                            <p><img name="compteur" class="compteur" src="../images/count/count_0.png"/></p>
+                        </div>
+                        <!--p><img name="victoire_defaite" class="pendu victoire_defaite" src="../images/penduC/pendu_0.png"/></p-->
+                    </div>
+                    <!--div id="compteur_clavier"-->
+                        <!-- p><img name="compteur" class="compteur" src="../images/count/count_0.png"/></p -->
                     <table id="alphabet">
-
                         <tr>
-                            <td onclick="gameplay(this);" > A </td>
-                            <td onclick="gameplay(this);" > B </td>
-                            <td onclick="gameplay(this);" > C </td>
-                            <td onclick="gameplay(this);" > D </td>
-                            <td onclick="gameplay(this);" > E </td>
-                            <td onclick="gameplay(this);" > F </td>
-                            <td onclick="gameplay(this);" > G </td>
-                            <td onclick="gameplay(this);" > H </td>
-                            <td onclick="gameplay(this);" > I </td>
-                            <td onclick="gameplay(this);" > J </td>
-                            <td onclick="gameplay(this);" > K </td>
-                            <td onclick="gameplay(this);" > L </td>
-                            <td onclick="gameplay(this);" > M </td>
+                            <td onclick="gameplay(this);" class="clavier">A</td>
+                            <td onclick="gameplay(this);" class="clavier">B</td>
+                            <td onclick="gameplay(this);" class="clavier">C</td>
+                            <td onclick="gameplay(this);" class="clavier">D</td>
+                            <td onclick="gameplay(this);" class="clavier">E</td>
+                            <td onclick="gameplay(this);" class="clavier">F</td>
+                            <td onclick="gameplay(this);" class="clavier">G</td>
+                            <td onclick="gameplay(this);" class="clavier">H</td>
+                            <td onclick="gameplay(this);" class="clavier">I</td>
+                            <td onclick="gameplay(this);" class="clavier">J</td>
+                            <td onclick="gameplay(this);" class="clavier">K</td>
+                            <td onclick="gameplay(this);" class="clavier">L</td>
+                            <td onclick="gameplay(this);" class="clavier">M</td>
                         </tr>
                         <tr>
-                            <td onclick="gameplay(this);" > N </td>
-                            <td onclick="gameplay(this);" > O </td>
-                            <td onclick="gameplay(this);" > P </td>
-                            <td onclick="gameplay(this);" > Q </td>
-                            <td onclick="gameplay(this);" > R </td>
-                            <td onclick="gameplay(this);" > S </td>
-                            <td onclick="gameplay(this);" > T </td>
-                            <td onclick="gameplay(this);" > U </td>
-                            <td onclick="gameplay(this);" > V </td>
-                            <td onclick="gameplay(this);" > W </td>
-                            <td onclick="gameplay(this);" > X </td>
-                            <td onclick="gameplay(this);" > Y </td>
-                            <td onclick="gameplay(this);" > Z </td>
+                            <td onclick="gameplay(this);" class="clavier">N</td>
+                            <td onclick="gameplay(this);" class="clavier">O</td>
+                            <td onclick="gameplay(this);" class="clavier">P</td>
+                            <td onclick="gameplay(this);" class="clavier">Q</td>
+                            <td onclick="gameplay(this);" class="clavier">R</td>
+                            <td onclick="gameplay(this);" class="clavier">S</td>
+                            <td onclick="gameplay(this);" class="clavier">T</td>
+                            <td onclick="gameplay(this);" class="clavier">U</td>
+                            <td onclick="gameplay(this);" class="clavier">V</td>
+                            <td onclick="gameplay(this);" class="clavier">W</td>
+                            <td onclick="gameplay(this);" class="clavier">X</td>
+                            <td onclick="gameplay(this);" class="clavier">Y</td>
+                            <td onclick="gameplay(this);" class="clavier">Z</td>
                         </tr>
-                    
-                    </table><br>
-
+                    </table>
+                    <!--/div-->
                 </aside>
-                  
+                <p id="message_defaite" class="bold">Le mot à découvrir était :</p>
                 <table id="cachette">
                     <tr>
-                        <!-- .charAt() récupère rang et renvoi chaine de caractère-->
-                        <script language="javascript">
-                            
-                            for(var i = 0; i<tailleMot; i++){
-                                document.write("<td><p>" + motPendu.charAt(i) + "</p></td>");
-                            }
-
-                        </script>
+                        <script src="cachette.js"></script>
                     </tr>
                 </table>
                     
-                <script language="javascript">
+                <script src="tableauMot.js"></script>
 
-                    /*for(var i=0; i<tailleMot; i++){
-                    cachetteVide[i]=document.getElementById(cellule);
-                    }*/
-
-                </script>
-
-                <p class="bold"><a class="recharger" href="javascript:window.location.reload();">
-                    Vous voulez recommencer ?
+                <p class="bold" id="recommencer"><a class="recharger" href="javascript:window.location.reload();">
+                    <img id="icon_redo" src="../images/redo.png" alt="Vous voulez recommencer ?"/>
                 </a></p>
                 <!-- créer lien permettant d'acutaliser page = recharge
                 gameplay = fonction javascript qui gère le jeu
@@ -174,6 +102,16 @@
             </div>
 
             <audio src="../musics/Jaunter-Reset.mp3" controls loop>Votre navigateur ne semble pas supporter ce fichier.</audio>
+            
+            <p><img onclick="montrerCacher('credit_auteur');" id="icon_music" src="../images/icon_music.png" alt="Notes et Références : Crédit d'auteurs (Musique)" title="Cliquer 2 fois pour faire apparaître"/></p>
+            <p id="credit_auteur">
+                <span class="label">Auteur : </span><a class="lien_credits" href="https://jaunter.bandcamp.com">Jaunter</a><br/>
+                <span class="label">Track : </span>Reset<br/>
+                <span class="label">Licence : </span><a class="lien_credits" href="https://creativecommons.org/licenses/by/3.0/">https://creativecommons.org/licenses/by/3.0/</a><br/>
+                <span class="label">Source : </span><a class="lien_credits" href="https://auboutdufil.com/?id=497">Télécharger gratuitement Jaunter -  Reset</a>
+            </p>
+
+            <script src="credit_auteur.js"></script>
         </div>
     </body>
 </html>

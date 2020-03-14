@@ -8,7 +8,7 @@ var tailleMot;				// Le nombre de lettres du mot à trouver
 var coupsManques=0;			// Le nombre de lettres fausses essayées
 var lettresDecouvertes=0;		// Le nombre de lettres trouvées
 var end=false;				// true si le jeu est terminé
- 
+
 // On prend un mot au hasard en fonction de la seconde en cours
 
 /*motSecret=mots[time.getSeconds() % mots.length];*/
@@ -50,12 +50,15 @@ function gameplay(element){
     if(!trouve){
         coupsManques++;
         document.images['pendu'].src="../images/penduC/pendu_"+coupsManques+".png"; // On change l'image du pendu
-        
+        document.images['compteur'].src="../images/count/count_"+coupsManques+".png";
+
         // Si on a raté 10 fois :
         if(coupsManques>9){
             for(var i=0; i<tailleMot; i++) tableauCachette[i].style.visibility='visible';
             //alert("Vous avez perdu !");
-            document.images['victoire_defaite'].src="../images/penduC/pendu_12.png";
+            
+            document.images['compteur'].src="../images/count/count_12.png";
+            document.images['compteur'].style.height="240px"; //modif
             var motdecouvrir_msg = document.getElementById('message_defaite');
             motdecouvrir_msg.style.display="block";
             
@@ -65,7 +68,8 @@ function gameplay(element){
     }
     if(lettresDecouvertes==tailleMot){
         //alert("Bravo ! Vous avez découvert le mot secret !");
-        document.images['victoire_defaite'].src="../images/penduC/pendu_11.png";
+        document.images['compteur'].src="../images/count/count_11.png";
+        document.images['compteur'].style.height="250px"; //modif
         end=true;
     }
 }

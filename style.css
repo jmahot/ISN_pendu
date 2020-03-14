@@ -265,10 +265,21 @@ aside[id="clavier"]
     height:250px;
 }
 
+.compteur
+{
+    width: 120px;
+    height:120px;
+}
+
+.compteur_width
+{
+    width:250px;//modif
+}
 #pendu_container_img
 {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width:650px;
 }
 
