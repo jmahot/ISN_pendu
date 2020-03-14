@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../style.css" />
+        <title>Le Pendu</title>
+        <script language="JavaScript">
+			var motSecret;
+				
+			var now=new Date();			// Date d'aujourd'hui
+			var tableauMot=new Array();	// Le tableau qui contient les lettres du mot à trouver
+			var mots=new Array();		// Le tableau qui contient tous les mots possibles
+				
+			var tailleMot;				// Le nombre de lettres du mot à trouver
+			var coupsManques=0;			// Le nombre de lettres fausses essay�es
+			var lettresTrouvees=0;		// Le nombre de lettres trouvées
+			var fini=false;				// true si le jeu est terminé
+				
+			mots[0]="TITANESQUE";
+			mots[1]="ANABELLE";
+			mots[2]="POMPIER";
+			mots[3]="OBELISQUE";
+			mots[4]="PLACARD";
+			mots[5]="RADIATEUR";
+			mots[6]="DEODORANT";
+			mots[7]="CAMION";
+			mots[8]="HORLOGE";
+			mots[9]="MARGUERITE";
+			mots[10]="ELEPHANT";
+			mots[11]="IGLOO";
+			mots[12]="NAVIRE";
+				
+			// On prend un mot au hasard en fonction de la seconde en cours
+	    	motSecret=mots[now.getSeconds() % mots.length];
+			tailleMot=motSecret.length;
+				
+			// Permet de changer la couleur des touches du clavier
+			function changeCouleur(element,couleur){
+				element.style.backgroundColor=couleur;
+			}
+				
+			// Gère tous les traitements à faire lorsqu'on appuie sur une touche
+	    	function gameplay(element){
+					
+				// Si la couleur de fond est lightgreen, c'est qu'on a déjà essayé - on quitte la fonction
+				if(element.style.backgroundColor=="lightGreen" ||fini) return;
+					
+				// On récupère la lettre du clavier et on met la touche en lightgreen (pour signaler qu'elle est cliquée)
+				var lettre=element.innerHTML;
+				changeCouleur(element,"lightGreen");
+					
+				// On met la variable trouve à false;
+				var trouve=false;
+					
+				// On parcours chaque lettre du mot, on cherche si on trouve la lettre sélectionnée au clavier
+				for(var i=0; i<tailleMot; i++) {
+						
+					// Si c'est le cas :
+					if(tableauMot[i].innerHTML==lettre) {
+						tableauMot[i].style.visibility='visible';	// On affiche la lettre
+						trouve=true;
+						lettresTrouvees++;
+					}
+				
+				}
+					
+				// Si la lettre n'est pas présente, trouve vaut toujours false :
+				if(!trouve){
+					coupsManques++;
+					document.images['pendu'].src="../images/penduC/pendu_"+coupsManques+".png"; // On change l'image du pendu
+						
+					// Si on a raté 10 fois :
+					if(coupsManques==10){
+						alert("Vous avez perdu !");
+						for(var i=0; i<tailleMot; i++) tableauMot[i].style.visibility='visible';
+						fini=true;
+						// on affiche le mot, on fini le jeu
+					}
+				}
+				if(lettresTrouvees==tailleMot){
+					alert("Bravo ! Vous avez découvert le mot secret !");
+					fini=true;
+				}
+			}
+			
+		</script>
+    </head>
+
+    <body>
+        <header>
+            <a href="../projet.html"><h1 class="barre">Hortografe</h1></a>
+            <aside id="header">
+                <a href="rules.html">Les règles du jeu</a>
+            </aside>
+            <nav>
+                <ul>
+                    <li><a href="../projet.html">Accueil</a></li>
+                    <li><a href="https://blogjulietinuviel.wixsite.com/blogprojet" title="Ctrl + clic : ouvrir dans un nouvel onglet">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="page">
+            <h1>Le Jeu du Pendu</h1>
+            
+            <div id="tout">
+                <aside id="clavier">
+
+                    <table id="alphabet">
+
+                        <tr>
+                            <td onclick="gameplay(this);" >A</td>
+                            <td onclick="gameplay(this);" >B</td>
+                            <td onclick="gameplay(this);" >C</td>
+                            <td onclick="gameplay(this);" >D</td>
+                            <td onclick="gameplay(this);" >E</td>
+                            <td onclick="gameplay(this);" >F</td>
+                            <td onclick="gameplay(this);" >G</td>
+                            <td onclick="gameplay(this);" >H</td>
+                            <td onclick="gameplay(this);" >I</td>
+                            <td onclick="gameplay(this);" >J</td>
+                            <td onclick="gameplay(this);" >K</td>
+                            <td onclick="gameplay(this);" >L</td>
+                            <td onclick="gameplay(this);" >M</td>
+                        </tr>
+                        <tr>
+                            <td onclick="gameplay(this);" >N</td>
+                            <td onclick="gameplay(this);" >O</td>
+                            <td onclick="gameplay(this);" >P</td>
+                            <td onclick="gameplay(this);" >Q</td>
+                            <td onclick="gameplay(this);" >R</td>
+                            <td onclick="gameplay(this);" >S</td>
+                            <td onclick="gameplay(this);" >T</td>
+                            <td onclick="gameplay(this);" >U</td>
+                            <td onclick="gameplay(this);" >V</td>
+                            <td onclick="gameplay(this);" >W</td>
+                            <td onclick="gameplay(this);" >X</td>
+                            <td onclick="gameplay(this);" >Y</td>
+                            <td onclick="gameplay(this);" >Z</td>
+                        </tr>
+                        <img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/>
+                    </table>
+
+                </aside>
+                  
+                <table id="cachette">
+                    <tr>
+                        <!-- .charAt() récupère rang et renvoi chaine de caractère-->
+                        <script language="javascript">
+                            for(var i=0; i<tailleMot; i++) document.write("<td> <p id=\""+i+"\">"+motSecret.charAt(i)+"</p></td>");
+                        </script>
+                    </tr>
+                </table>
+                    
+                <script language="javascript">
+                    for(var i=0; i<tailleMot; i++) tableauMot[i]=document.getElementById(i);
+                </script>
+
+                <p class="bold"><a class="recharger" href="javascript:window.location.reload();">
+                    Vous voulez recommencer ?
+                </a></p>
+                <!-- créer lien permettant d'acutaliser page = recharge
+                gameplay = fonction javascript qui gère le jeu
+                onclick = récupère lettre du tableau qui devient this => paramètre de gameplay-->
+            </div>
+
+        </section>
+
+        <div id="piedDePage">
+            <footer>
+                <p>Fait par Julie Mahot et Tinuviel Croissant</p>
+            </footer>
+
+            <div id="bloc_logo_larousse">
+                <a id="lien_larousse" href="https://www.larousse.fr/dictionnaires/francais" title="Site Larousse | Ctrl + clic : ouvrir dans un nouvel onglet">
+                    <p><img id="img_dico" src="../images/img_dico.png" alt="DicoLarousse"/></p>
+                </a>
+            </div>
+
+            <audio src="../musics/Jaunter-Reset.mp3" controls loop>Votre navigateur ne semble pas supporter ce fichier.</audio>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../style.css" />
+        <title>Le Pendu</title>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <a href="../projet.html"><h1 class="barre">Hortografe</h1></a>
+            <aside id="header">
+                <a href="rules.html">Les règles du jeu</a>
+            </aside>
+            <nav>
+                <ul>
+                    <li><a href="../projet.html">Accueil</a></li>
+                    <li><a href="https://blogjulietinuviel.wixsite.com/blogprojet" title="Ctrl + clic : ouvrir dans un nouvel onglet">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="page">
+            <h1>Le Jeu du Pendu</h1>
+            
+            <div id="tout">
+                <aside id="clavier_imgPendu">
+
+                    <table id="alphabet">
+
+                        <tr>
+                            <td onclick="gameplay(this);" >A</td>
+                            <td onclick="gameplay(this);" >B</td>
+                            <td onclick="gameplay(this);" >C</td>
+                            <td onclick="gameplay(this);" >D</td>
+                            <td onclick="gameplay(this);" >E</td>
+                            <td onclick="gameplay(this);" >F</td>
+                            <td onclick="gameplay(this);" >G</td>
+                            <td onclick="gameplay(this);" >H</td>
+                            <td onclick="gameplay(this);" >I</td>
+                            <td onclick="gameplay(this);" >J</td>
+                            <td onclick="gameplay(this);" >K</td>
+                            <td onclick="gameplay(this);" >L</td>
+                            <td onclick="gameplay(this);" >M</td>
+                        </tr>
+                        <tr>
+                            <td onclick="gameplay(this);" >N</td>
+                            <td onclick="gameplay(this);" >O</td>
+                            <td onclick="gameplay(this);" >P</td>
+                            <td onclick="gameplay(this);" >Q</td>
+                            <td onclick="gameplay(this);" >R</td>
+                            <td onclick="gameplay(this);" >S</td>
+                            <td onclick="gameplay(this);" >T</td>
+                            <td onclick="gameplay(this);" >U</td>
+                            <td onclick="gameplay(this);" >V</td>
+                            <td onclick="gameplay(this);" >W</td>
+                            <td onclick="gameplay(this);" >X</td>
+                            <td onclick="gameplay(this);" >Y</td>
+                            <td onclick="gameplay(this);" >Z</td>
+                        </tr>
+                        <img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/>
+                    </table>
+
+                </aside>
+                  
+                <table id="cachette">
+                    <tr>
+                        <script src="cachette.js"></script>
+                    </tr>
+                </table>
+                    
+                <script src="tableauMot.js"></script>
+
+                <p class="bold" id="recommencer"><a class="recharger" href="javascript:window.location.reload();">
+                    <img id="icon_redo" src="../images/redo.png" alt="Vous voulez recommencer ?"/>
+                </a></p>
+                <!-- créer lien permettant d'acutaliser page = recharge
+                gameplay = fonction javascript qui gère le jeu
+                onclick = récupère lettre du tableau qui devient this => paramètre de gameplay-->
+            </div>
+
+        </section>
+
+        <div id="piedDePage">
+            <footer>
+                <p>Fait par Julie Mahot et Tinuviel Croissant</p>
+            </footer>
+
+            <div id="bloc_logo_larousse">
+                <a id="lien_larousse" href="https://www.larousse.fr/dictionnaires/francais" title="Site Larousse | Ctrl + clic : ouvrir dans un nouvel onglet">
+                    <p><img id="img_dico" src="../images/img_dico.png" alt="DicoLarousse"/></p>
+                </a>
+            </div>
+
+            <audio src="../musics/Jaunter-Reset.mp3" controls loop>Votre navigateur ne semble pas supporter ce fichier.</audio>
+        </div>
+    </body>
+</html>

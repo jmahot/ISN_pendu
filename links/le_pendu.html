@@ -48,16 +48,15 @@
 
                         lettresTrouves++;
                         /*montrer la lettre dans le tableau*/
-
                     }
                     
                     else{
                         coupsRestants--;
-                    /*afficher nouvelle image du pendu ?
-                    continuer le dessin*/
+                        /*afficher nouvelle image du pendu ?
+                        continuer le dessin*/
 
                         if(coupsRestants == 0){
-                            /*document.write*/alert("OUPS ! VOUS AVEZ PERDU !");
+                            alert("OUPS ! VOUS AVEZ PERDU !");/*document.write*/
                             /*repasser tableau en mode visible*/
                             return;
                         }
@@ -66,7 +65,7 @@
 
                     if(lettresTrouves == tailleMot){
 
-                        /*document.write*/alert("VICTOIRE");
+                        alert("VICTOIRE");/*document.write*/
                         return;
                     }
                 }   

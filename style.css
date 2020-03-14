@@ -132,6 +132,7 @@ aside[id="header"]:hover
     padding:2em;
     text-align:center;
     color:rgb(50, 50, 50);
+    position: relative;/**/
 }
 
 #page h1
@@ -172,11 +173,15 @@ aside[id="header"]:hover
 
 /*PENDU*/
 
-#clavier
+#clavier_imgPendu
 {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
+    justify-content: space-around;
+    align-items: center;
     background:white;
+    height:300px;
+    font-weight: bold;
 }
 
 table
@@ -184,6 +189,9 @@ table
     border:4px black;
     padding:10px;
     background-color: rgba(1, 148, 148, 0.6);
+    position: relative;
+    bottom:-20px;
+    border-radius: 7px;
 }
 
 td 
@@ -214,6 +222,20 @@ td
     font-weight:bold;
     font-size:1.5em;
     text-align:center;
+}
+
+#recommencer
+{
+    position: absolute;
+    bottom: 20px;
+    left:0;
+    right:0;
+}
+
+#icon_redo
+{
+    width: 50px;
+    height:50px;
 }
 
 /*#cachette p{
@@ -353,4 +375,21 @@ audio
     bottom:0px;
     right:0px;
     border: 3px solid grey;
+}
+
+/* AUTRES RAJOUTES RECEMMENT */
+.pendu
+{
+    width: 250px;
+    height:250px;
+}
+
+#cachette p
+{
+    visibility: hidden;
+}
+
+.bold
+{
+    font-weight: bold;
 }
