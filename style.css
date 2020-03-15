@@ -17,7 +17,7 @@ body
     background-size: cover;
     background-image: url(images/background.jpg);
     background-attachment: fixed;
-    font-family: "Harrington", "Papyrus", "Lucida Handwriting", monospace, sans-serif;
+    font-family: "Harrington", "Papyrus", "Lucida Handwriting", monospace, serif;
     position: relative;
 }
 
@@ -67,7 +67,7 @@ nav li
 nav li > a /*lien de navigation */
 {
     color:rgb(0, 0, 0);
-    font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', serif;
     text-decoration: none;
     font-size: 17.5px;
     min-width: 200px;
@@ -121,7 +121,7 @@ aside[id="header"]:hover
 {
     display: flex;
     flex-direction: column;
-    font-family: Papyrus, sans-serif;
+    font-family: 'Papyrus', serif;
     font-size: large;
     max-width: 1216px;
     min-height: 570px/*414px*/;
@@ -316,7 +316,7 @@ aside[id="clavier"]
     background-color: rgb(167, 161, 161);
     border-radius: 4px;
 
-    font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', serif;
     text-decoration: none;
     font-size: 17.5px;
     text-align: center;
@@ -575,6 +575,11 @@ audio
         width:400px;
         border-radius: 6%;
     }
+    #img_pendu:active
+    {
+        width:380px;
+    }
+
     #bloc_logo_larousse
     {
         width:170px;
@@ -608,11 +613,16 @@ audio
         height:120px;
         bottom:50px;
     }
+    #icon_music:active
+    {
+        width:100px;
+        height:100px;
+    }
     #credit_auteur
     {
         height:285px;
         width:304px;
-        font-size: 1.3em;
+        font-size: 1.4em;
         position: absolute;
         right:180px;
     }
