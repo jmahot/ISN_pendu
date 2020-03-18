@@ -637,12 +637,12 @@ audio
     }
     .font_size
     {
-        font-size: 1.8em;
+        font-size: 1.7em;
         font-family: serif;
     }
     .font_size > h2
     {
-        font-size: 2em;
+        font-size: 1.9em;
         margin-top:0.4em;
         margin-bottom: 0.3em;
     }
