@@ -635,4 +635,15 @@ audio
         width:140px;
         height:40px
     }
+    .font_size
+    {
+        font-size: 1.8em;
+        font-family: serif;
+    }
+    .font_size > h2
+    {
+        font-size: 2em;
+        margin-top:0.4em;
+        margin-bottom: 0.3em;
+    }
 }
