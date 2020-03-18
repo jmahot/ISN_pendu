@@ -340,7 +340,7 @@ aside[id="clavier"]
     color:red;
 }
 
-.container_text .larousse
+.container_text .dico
 {
     color:rgb(148, 136, 26);
 }
@@ -370,9 +370,9 @@ footer
     align-items: center;
 }
 
-/* LIEN DICO LAROUSSE */
+/* LIEN DICO ACADEMIE FRANCAISE */
 
-#bloc_logo_larousse
+#bloc_logo_dico
 {
     background-color:rgba(1, 148, 148, 0.6);
     text-align: center;
@@ -584,7 +584,7 @@ audio
         width:380px;
     }
 
-    #bloc_logo_larousse
+    #bloc_logo_dico
     {
         width:130px;
         height:130px;
