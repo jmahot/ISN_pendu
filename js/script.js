@@ -20,6 +20,17 @@ tailleMot=motSecret.length;
 function changeCouleur(element,couleur){
     element.style.color=couleur;
 }
+
+//permet récupérer mot du tableau avec accent
+function accent(){
+    for(var i=0; i<mots.length; i++){
+        if (motSecret==mots[i]){
+             return tableauNone[i];
+        }
+
+    }   
+
+}
         
 // Gère tous les traitements à faire lorsqu'on appuie sur une touche
 function gameplay(element){
@@ -60,6 +71,8 @@ function gameplay(element){
             document.images['compteur'].src="../images/count/count_12.png";
             var motdecouvrir_msg = document.getElementById('message_defaite');
             motdecouvrir_msg.style.display="block";
+            document.getElementById('cachette').setAttribute('title', accent());
+            // NEW : donne un title à cachette à la fin : mot avec accent
             end=true;
             // on affiche le mot, on fini le jeu
             // Défaite
@@ -69,6 +82,8 @@ function gameplay(element){
         document.images['compteur'].style.width="250px";
         document.images['compteur'].style.height="250px";
         document.images['compteur'].src="../images/count/count_11.png";
+        document.getElementById('cachette').setAttribute('title', accent());
+        // NEW : donne un title à cachette à la fin : mot avec accent
         end=true;
         // Victoire
     }
