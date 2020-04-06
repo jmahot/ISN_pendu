@@ -1,12 +1,3 @@
-/* Tout ce qui est mis en commentaire est inutile */
-
-/*
-@font-face 
-{
-	font-family: "";
-    src: url('fonts/.ttf');
-}*/
-
 *
 {
     margin:0;
@@ -22,6 +13,7 @@ body
 }
 
 /* HEADER */
+
 header
 {
     display:flex;
@@ -45,6 +37,7 @@ header a
 }
 
 /* BARRES DE NAVIGATION ( accueil et blog ) - fait parti du HEADER */
+
 nav
 {
     background-color: rgb(50, 50, 50);
@@ -88,6 +81,7 @@ nav li > a:hover /* quand on passe la souris dessus */
 }
 
 /* BOUTON REGLES - fait parti du HEADER */
+
 aside[id="header"]
 {
     background-color: rgb(148, 136, 26);
@@ -117,6 +111,7 @@ aside[id="header"]:hover
 }
 
 /* SECTION PAGE */
+
 #page
 {
     display: flex;
@@ -124,7 +119,7 @@ aside[id="header"]:hover
     font-family: 'Papyrus', serif;
     font-size: large;
     max-width: 1216px;
-    min-height: 570px/*414px*/;
+    min-height: 570px;
     margin: auto;
     margin-top:20px;
     background-color: rgb(218, 218, 218);
@@ -133,7 +128,7 @@ aside[id="header"]:hover
     padding:2em;
     text-align:center;
     color:rgb(50, 50, 50);
-    position: relative;/**/
+    position: relative;
 }
 
 #page h1
@@ -144,11 +139,12 @@ aside[id="header"]:hover
 }
 
 /* PENDU - fait parti de #page */
+
 #img_pendu
 {
     border-radius:5px;
     width: 190px;
-    margin-top: 7em;
+    margin-top: 2.5em;
 }
 #img_pendu:hover
 {
@@ -161,11 +157,16 @@ aside[id="header"]:hover
 #container_pendu
 {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     min-height:364px;
 }
-#container_pendu > a
+#container_pendu a
 {
-    margin:auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-height:200px;
 }
 
 /*PENDU*/
@@ -190,9 +191,10 @@ table
     position: relative;
     bottom:-20px;
     border-radius: 7px;
+    margin: 0.7em;
 }
 
-td[class="clavier"] /* A REVOIR !!! */
+td[class="clavier"]
 {
     background:white;
     border:1px solid black;
@@ -237,7 +239,6 @@ td[class="clavier"] /* A REVOIR !!! */
 {
     visibility: hidden;
 }
-
 
 .recharger
 {
@@ -290,7 +291,87 @@ aside[id="clavier"]
     font-weight: bold;
 }
 
+/* Bouton copier mot pendu */
+
+#container_copier_clavier
+{
+    display:flex;
+    flex-direction: column;
+}
+
+#container_question_copier
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:400px;
+    height:100px;
+}
+
+input
+{
+    text-align: center;
+    width: 8.5em;
+    height: 1.5em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: rgba(0, 128, 128, 0.5) solid 1.5px;
+}
+button
+{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: rgba(0, 128, 128, 0.5) solid 2px;
+    background-color: white;
+}
+button p
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button:active
+{
+    padding: 0;
+    border: rgba(155, 86, 86, 0.5) solid 2px;
+}
+
+#icon_copy:active
+{
+    width:1.4em;
+    height:1.4em;
+}
+
+#icon_copy
+{
+    width:1.47em;
+    height:1.47em;
+}
+
+#copier_motpendu
+{
+    display: none;
+    margin-right: 2em;
+    align-items: center;
+}
+
+#icon_question
+{
+    display: none;
+    cursor: pointer;
+}
+
+#icon_question:active
+{
+    height:95px;
+    width:95px;
+}
+
+
 /*REGLES - fait parti de #page*/
+
 .container_text
 {
     padding:1em;
@@ -352,6 +433,7 @@ aside[id="clavier"]
 }
 
 /* PIED DE PAGE */
+
 footer
 {
     font-family: "Blubble Tea",'Courier New', Courier, monospace;
@@ -461,15 +543,15 @@ audio
     #container_fondblanc
     {
         flex-direction: column;
-        height:450px;
+        height:500px;
     }
     table
     {
-        bottom:-10px;
+        bottom:-8px;
     }
     #page
     {
-        min-height: 710px;
+        min-height: 760px;
     }
     #cachette
     {
@@ -501,7 +583,6 @@ audio
     {
         margin-top:1em;
     }
-
 }
 @media all and (max-width:670px)
 {
@@ -526,7 +607,7 @@ audio
     }
     #page
     {
-        height:1520px;
+        height:1580px;
     }
     #container_fondblanc
     {

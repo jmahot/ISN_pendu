@@ -1,19 +1,15 @@
 var motSecret;
 
-//var time=new Date();			// Date d'aujourd'hui
 var tableauCachette=new Array();	// Le tableau qui contient les lettres du mot à trouver
-//var mots=new Array();		// Le tableau qui contient tous les mots possibles
 
 var tailleMot;				// Le nombre de lettres du mot à trouver
 var coupsManques=0;			// Le nombre de lettres fausses essayées
 var lettresDecouvertes=0;		// Le nombre de lettres trouvées
 var end=false;				// true si le jeu est terminé
 
-// On prend un mot au hasard en fonction de la seconde en cours
+// On pioche un mot au hasard
+motSecret=mots[Math.floor(Math.random()*mots.length)];
 
-/*motSecret=mots[time.getSeconds() % mots.length];*/
-motSecret=mots[Math.floor(Math.random()*mots.length)]
-//l'autre méthode hasard trop restreint, toujours la même 1ere lettre
 tailleMot=motSecret.length;
 
 // Permet de changer la couleur des touches du clavier
@@ -25,7 +21,7 @@ function changeCouleur(element,couleur){
 function accent(){
     for(var i=0; i<mots.length; i++){
         if (motSecret==mots[i]){
-            return tableauNone[i];
+            return tableauMots[i];
         }
     }
 }
@@ -69,8 +65,9 @@ function gameplay(element){
             document.images['compteur'].src="../images/count/count_12.png";
             var motdecouvrir_msg = document.getElementById('message_defaite');
             motdecouvrir_msg.style.display="block";
+            document.getElementById('icon_question').style.display = "block";
             document.getElementById('cachette').setAttribute('title', accent());
-            // NEW : donne un title à cachette à la fin : mot avec accent
+            // Donne un title à cachette à la fin : mot avec accent
             end=true;
             // on affiche le mot, on fini le jeu
             // Défaite
@@ -80,8 +77,9 @@ function gameplay(element){
         document.images['compteur'].style.width="250px";
         document.images['compteur'].style.height="250px";
         document.images['compteur'].src="../images/count/count_11.png";
+        document.getElementById('icon_question').style.display = "block";
         document.getElementById('cachette').setAttribute('title', accent());
-        // NEW : donne un title à cachette à la fin : mot avec accent
+        // Donne un title à cachette à la fin : mot avec accent
         end=true;
         // Victoire
     }

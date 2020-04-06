@@ -24,15 +24,25 @@
         
         <section id="page">
             <h1>Le Jeu du Pendu</h1>
-            
-            <div id="tout">
-                <aside id="container_fondblanc">
 
-                    <div id="pendu_container_img">
-                        <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png"/></p>
-                        <div id="compteur_width">
-                            <p><img name="compteur" class="compteur" src="../images/count/count_0.png"/></p>
+            <aside id="container_fondblanc">
+                <div id="pendu_container_img">
+                    <p><img name="pendu" class="pendu" src="../images/penduC/pendu_0.png" alt="image du pendu"/></p>
+                    <div id="compteur_width">
+                        <p><img name="compteur" class="compteur" src="../images/count/count_0.png" alt="compteur"/></p>
+                    </div>
+                </div>
+
+                <div id="container_copier_clavier">
+                    <div id="container_question_copier">
+                        <div id="copier_motpendu">
+                            <script>
+                                document.write("<input type=\"text\" value=\""+accent()+"\" id=\"motpendu_accent\"/>");
+                            </script>
+                            <button onclick="copier()"><p><img id="icon_copy" src="../images/copy_icon.png" alt="Copier" title="Copier dans le presse-papier"/></p></button>
+                            <script src="../js/copier.js"></script>
                         </div>
+                        <p><img onclick="montrerCacher_copier('copier_motpendu');" id="icon_question" src="../images/question_mark.png" alt="&#10068;"/></p>
                     </div>
 
                     <table id="alphabet">
@@ -67,23 +77,28 @@
                             <td onclick="gameplay(this);" class="clavier">Z</td>
                         </tr>
                     </table>
-                </aside>
-                <div id="tableauCachette_recommencer">
-                    <p id="message_defaite" class="bold">Le mot à découvrir était :</p>
-                    <table id="cachette">
-                        <tr>
-                            <script src="../js/cachette.js"></script>
-                        </tr>
-                    </table>
-                        
-                    <script src="../js/tableauMot.js"></script>
-
-                    <p class="bold" id="recommencer"><a class="recharger" href="javascript:window.location.reload();">
-                        <img id="icon_redo" src="../images/redo.png" alt="&#128257;"/>
-                    </a></p>
                 </div>
-            </div>
+            </aside>
 
+            <div id="tableauCachette_recommencer">
+                <p id="message_defaite" class="bold">Le mot à découvrir était :</p>
+                <table id="cachette">
+                    <tr>
+                        <script>
+                            for(var i=0; i<tailleMot; i++) document.write("<td> <p id=\""+i+"\">"+motSecret.charAt(i)+"</p></td>");
+                            //charAt() récupère rang et renvoi chaine de caractère
+                        </script>
+                    </tr>
+                </table>
+                
+                <script>
+                    for(var i=0; i<tailleMot; i++) tableauCachette[i]=document.getElementById(i);
+                </script>
+
+                <p class="bold" id="recommencer"><a class="recharger" href="javascript:window.location.reload();">
+                    <img id="icon_redo" src="../images/redo.png" alt="&#128257;"/>
+                </a></p>
+            </div>
         </section>
 
         <div id="piedDePage">
@@ -99,15 +114,14 @@
 
             <audio src="../musics/Jaunter-Reset.mp3" controls loop>Votre navigateur ne semble pas supporter ce fichier.</audio>
             
-            <p><img onclick="montrerCacher('credit_auteur');" id="icon_music" src="../images/icon_music.png" alt="Notes et Références : Crédit d'auteurs (Musique)" title="Cliquer 2 fois pour faire apparaître"/></p>
+            <p><img onclick="montrerCacher_credit('credit_auteur');" id="icon_music" src="../images/icon_music.png" alt="Notes et Références : Crédit d'auteurs (Musique)" title="Cliquer 2 fois pour faire apparaître"/></p>
             <p id="credit_auteur">
                 <span class="label">Auteur : </span><a class="lien_credits" href="https://jaunter.bandcamp.com">Jaunter</a><br/>
                 <span class="label">Titre : </span>Reset<br/>
                 <span class="label">Licence : </span><a class="lien_credits" href="https://creativecommons.org/licenses/by/3.0/">https://creativecommons.org/licenses/by/3.0/</a><br/>
                 <span class="label">Source : </span><a class="lien_credits" href="https://auboutdufil.com/?id=497">Télécharger gratuitement Jaunter -  Reset</a>
             </p>
-
-            <script src="../js/credit_auteur.js"></script>
         </div>
+        <script src="../js/montrer_cacher.js"></script>
     </body>
 </html>
