@@ -400,7 +400,6 @@ button:active
 {
     background-color: rgb(167, 161, 161);
     border-radius: 4px;
-
     font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', serif;
     text-decoration: none;
     font-size: 17.5px;
@@ -767,5 +766,9 @@ audio
     input
     {
         font-size: 1.5em;
+    }
+    .liste_nav
+    {
+        font-size: 0.8em;
     }
 }
