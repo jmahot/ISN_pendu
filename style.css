@@ -166,7 +166,7 @@ aside[id="header"]:hover
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-height:200px;
+    height:200px;
 }
 
 /*PENDU*/
@@ -183,15 +183,18 @@ aside[id="header"]:hover
     box-shadow: 0px 3px 2px grey;
 }
 
+#alphabet
+{
+    margin: 1em;
+}
+
 table
 {
-    border:4px black;
     padding:10px;
     background-color: rgba(1, 148, 148, 0.6);
     position: relative;
     bottom:-20px;
     border-radius: 7px;
-    margin: 0.7em;
 }
 
 td[class="clavier"]
@@ -316,6 +319,7 @@ input
     border-radius: 5px;
     margin-right: 0.5em;
     border: rgba(0, 128, 128, 0.5) solid 1.5px;
+    font-size: 0.8em;
 }
 button
 {
@@ -548,6 +552,7 @@ audio
     table
     {
         bottom:-8px;
+        margin-bottom: 10px;
     }
     #page
     {
@@ -556,10 +561,6 @@ audio
     #cachette
     {
         margin-top:10px;
-    }
-    table
-    {
-        margin-bottom: 10px;
     }
     #recommencer
     {
@@ -583,6 +584,10 @@ audio
     {
         margin-top:1em;
     }
+    #alphabet
+    {
+        margin-right: 0px;
+    }
 }
 @media all and (max-width:670px)
 {
@@ -599,6 +604,7 @@ audio
     {
         width:100%;
         height:170px;
+        max-width: 800px;
     }
     #cachette
     {
@@ -616,6 +622,7 @@ audio
     #pendu_container_img
     {
         flex-direction: column;
+        height:70%;
     }
     .pendu
     {
@@ -635,10 +642,6 @@ audio
     {
         width:120px;
         height:120px;
-    }
-    #pendu_container_img
-    {
-        height:70%;
     }
     h1
     {
@@ -694,14 +697,14 @@ audio
     }
     #icon_music
     {
-        width:120px;
-        height:120px;
-        bottom:50px;
+        width:110px;
+        height:110px;
+        bottom:60px;
     }
     #icon_music:active
     {
-        width:110px;
-        height:110px;
+        width:105px;
+        height:105px;
     }
     #credit_auteur
     {
@@ -721,10 +724,48 @@ audio
         font-size: 1.7em;
         font-family: serif;
     }
-    .font_size > h2
+    .font_size h2
     {
         font-size: 1.8em;
         margin-top:0.4em;
         margin-bottom: 0.3em;
+    }
+    #container_copier_clavier
+    {
+        width:100%;
+        align-items: center;
+    }
+    #container_question_copier
+    {
+        width: 50%;
+    }
+    button
+    {
+        width:70px;
+        height: 70px;
+    }
+    #icon_copy
+    {
+        width:60px;
+        height:60px;
+    }
+    #icon_copy:active
+    {
+        width:60px;
+        height:60px;
+    }
+    #icon_question
+    {
+        width:140px;
+        height:140px;
+    }
+    #icon_question:active
+    {
+        width: 137px;
+        height: 137px;
+    }
+    input
+    {
+        font-size: 1.5em;
     }
 }
